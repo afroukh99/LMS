@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-auto mb-3">
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <a href="/lessons" class="btn btn-outline-primary">Pdfs</a>
+        <a href="/videos" class="btn btn-outline-primary">Videos</a>
+      </div>
+
+      <div class="row">
+        <div class="col-auto">
+          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo" id="addLesson">
+            <i class="fa-solid fa-file-circle-plus"></i> Add video
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-----display video here-->
+<div class="row mt-4">
+  <% videos.forEach((video) => { %>
+  <div class="col-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= video.title %></h5>
+        <div class="video-container">
+          <iframe width="100%" height="auto" src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }); %>
+</div>
+</div>
+</div>
+
+
+<!------->
+</div>
+
+
+
+<!---Start of Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add new video</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/addVideo" method="POST">
+          <div class="mb-3">
+            <label for="title" class="form-label">Video Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+          </div>
+          <div class="mb-3">
+            <label for="videoLink" class="form-label">Video Link</label>
+            <input type="text" class="form-control" id="videoLink" name="url" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+      </div>
+    </div>
+    <!---End of Modal-->
+
+
+
+
+
+
+
+
+
+
+
+ 

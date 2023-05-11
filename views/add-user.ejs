@@ -1,0 +1,37 @@
+
+  <div class="container">
+    <form action="signup" method="post">
+      <h1 class="text-center">Sign Up</h1>
+      <div class="input-control">
+        <%- include('./partials/messages.ejs') -%>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <form action="/register" method="post">
+            <label for="role">Select your role:</label>
+            <select id="role" name="role" class="form-select mb-2" aria-label="Default select example">
+              <option value="teacher">Teacher</option>
+              <option value="student">Student</option>
+            </select>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"> firstName</label>
+              <input type="text" name="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"> lastName</label>
+              <input type="text" name="lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+              <button type="submit" id="submit" class="btn btn-primary">Login</button>
+            </div>
+
+      </div>
+    </form>
+  </div>
+
+  </body>
+
+  </html>

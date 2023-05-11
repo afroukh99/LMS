@@ -1,0 +1,42 @@
+<h2 class="fw-medium">Edit <span class="fw-lighter"><%- user.firstName%> <%- user.lastName %></span> </h2>
+<form action="/edit/<%= user._id %>?_method=PUT" method="post">
+    <div class="container col-lg-8 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">First Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <input type="text" class="form-control" name="firstName" value="<%= user.firstName %>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Last Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <input type="text" class="form-control" name="lastName" value="<%= user.lastName %>">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Role</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <select id="role" name="role" class="form-select" aria-label="Default select example">
+                            <option value="techer" <%- user.role==='techear' ? 'selected' : '' %>>Techear</option>
+                            <option value="student" <%- user.role==='student' ? 'selected' : '' %>>Student</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9 text-secondary">
+                        <input type="submit" class="btn btn-primary px-4" value="Save Changes">
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>

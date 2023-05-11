@@ -1,0 +1,43 @@
+<% if (currentUser && currentUser.role==='teacher' ) { %>
+<nav class="navbar navbar-expand-lg " id="nvbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">E-Ducate</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 end-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/manageCourses">Manage Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/manageStudents">Manage Students</a>
+                    </li>
+                    <li class="nav-item dropdown position-absolute top-0 end-0 me-5 ms-auto">
+                        <a class="nav-link dropdown-toggle" id="profile" data-bs-toggle="dropdown" role="button"
+                            aria-expanded="false" href="">
+                            <span class="userinitials ">
+                                <%= currentUser.firstName.charAt(0).toUpperCase() +
+                                    currentUser.lastName.charAt(0).toUpperCase() %>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/profile/<%= currentUser._id%>">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Grades</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                    <% } else if (currentUser) { %>
+                        <%- include('student-nav.ejs') -%>
+                        <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

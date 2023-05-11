@@ -1,0 +1,13 @@
+<%- include('./partials/header.ejs') -%>
+<h1 class="display-4 text-center mt-5">Reset Password</h1>
+<div class="container">
+    <form action="/forgot" method="post">
+        <%- include('./partials/messages.ejs') -%>
+        <div class="mb-3">
+            <input type="email" placeholder="Enter email address" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+        <button type="submit" id="submit" class="btn btn-primary">Send email</button>
+        <p><a href="/login" class="link-secondary link-offset-2 ">Back to login</a></p>
+    </form>
+    
+</div>

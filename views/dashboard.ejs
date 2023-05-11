@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <h1 class="mt-5" id="welcome">Welcome back <%- currentUser.firstName %> !<img src="/img/112.jpg" alt="" class="img-fluid" width="70px"></h1>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add Event
+      </button>
+    </div>
+    <div id='calendar'></div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addEventForm" action="/events">
+          <div class="form-group">
+            <label for="eventTitle">Title</label>
+            <input type="text" class="form-control" id="eventTitle" name="title" required>
+          </div>
+          <div class="form-group">
+            <label for="eventStart">Start Date and Time</label>
+            <input type="datetime-local" class="form-control" id="eventStart" name="start" required>
+          </div>
+          <div class="form-group">
+            <label for="eventEnd">End Date and Time</label>
+            <input type="datetime-local" class="form-control" id="eventEnd" name="end" required>
+          </div>
+        <!-- Add event form here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add Event</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+ <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
+<script>
+
+     document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+    
+
+    const addEventBtn = document.getElementById('addEventBtn')
+    addEventBtn.addEventListener('click', function() {
+      calendar.addEvent({
+        title: 'New Event',
+        start: new Date(),
+        allDay: true
+      })
+    })
+  })
+
+</script>

@@ -1,0 +1,15 @@
+<%- include('./partials/header.ejs') -%>
+    <h1 class="text-center mt-5 mb-3">New Password</h1>
+    <div class="container w-25">
+        <form action="/reset/<%=token%>" method="post">
+            <div class="mb-3">
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="confirmPass" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">Cange Password</button>
+            <p><a href="/login" class="text-decoration-none">back to login page</a></p>
+        </form>
+    </div>
