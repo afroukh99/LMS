@@ -18,18 +18,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="addEventForm" action="/events">
+        <form id="addEventForm" action="/events" method="post">
           <div class="form-group">
             <label for="eventTitle">Title</label>
             <input type="text" class="form-control" id="eventTitle" name="title" required>
           </div>
           <div class="form-group">
             <label for="eventStart">Start Date and Time</label>
-            <input type="datetime-local" class="form-control" id="eventStart" name="start" required>
+            <input type="date" class="form-control" id="eventStart" name="start" required>
           </div>
           <div class="form-group">
             <label for="eventEnd">End Date and Time</label>
-            <input type="datetime-local" class="form-control" id="eventEnd" name="end" required>
+            <input type="date" class="form-control" id="eventEnd" name="end" required>
           </div>
         <!-- Add event form here -->
       </div>

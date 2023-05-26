@@ -1,12 +1,14 @@
 <div class="container">
   <h2 class="mb-3">Enrolled users</h2>
   <div class="d-flex flex-column">
+    <% if (currentUser && currentUser.role==='teacher' ) { %>
     <div class="col-auto">
       <button type="button" id="addUser" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal"
         data-bs-whatever="@mdo">
         <i class="fa-solid fa-user-plus"></i>Add user
       </button>
     </div>
+    <% }  %>
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
         <thead class="sticky-top bg-white">
@@ -43,7 +45,7 @@
                       never
                       <% } %>
               </td>
-
+              <% if (currentUser && currentUser.role==='teacher' ) { %>
               <td>
                 <div class="d-flex flex-row justify-content-center">
                   <button type="button" class="btn btn-link" id="update">
@@ -57,9 +59,11 @@
                       <i class="fa-solid fa-user-minus"></i>
                     </button>
                   </form>
-                  <% }); %>
+                
                 </div>
               </td>
+              <% } %>
+              <% }) %>
             </tr>
 
         </tbody>

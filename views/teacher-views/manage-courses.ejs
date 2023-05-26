@@ -1,4 +1,10 @@
-<div class="container">
+<div class="container mt-5">
+  <% if (currentUser && currentUser.role==='teacher' ) { %>
+        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          data-bs-whatever="@mdo" id="addLesson">
+          <i class="fa-solid fa-file-circle-plus"></i> Add course
+        </button>
+        <%  } %>
     <h2 class="display-6">Courses</h2>
     <div class="card mb-3 w-70" id="cours">
         <div class="row g-0">
@@ -24,3 +30,33 @@
         </div>
     </div>
 </div>
+
+
+<!---Start of Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add new cours</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/addLesson" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="title" class="form-label">Cours Title</label>
+              <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Cours Description</label>
+              <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="imgFile" class="form-label">Image File</label>
+              <input type="file" class="form-control" id="imgFile" name="imgFile">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+  
+        </div>
+      </div>
+      <!---End of Modal-->

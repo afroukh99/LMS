@@ -954,6 +954,17 @@ a,
   box-shadow: 0.2rem .2rem 1rem rgba(0, 0, 0, .15);
 }
 
+#profile {
+  position: absolute;
+  top: 6px;
+  right: 90px;
+}
+#logout{
+  position: absolute;
+  top: 12px;
+  right: 30px;
+}
+
 .fixed-top {
   position: fixed;
   top: 0;
@@ -1199,4 +1210,8 @@ h1.heading {
   padding:10px;
   font-weight:600;
   text-transform: uppercase
+}
+
+#forget {
+  
 }

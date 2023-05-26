@@ -1,6 +1,7 @@
 <%- include('./partials/header.ejs') -%>
-<h1 class="display-4 text-center mt-5">Reset Password</h1>
-<div class="container">
+
+<div class="container w-50" id="forget">
+    <h1 class="display-4 text-center mt-5">Reset Password</h1>
     <form action="/forgot" method="post">
         <%- include('./partials/messages.ejs') -%>
         <div class="mb-3">
